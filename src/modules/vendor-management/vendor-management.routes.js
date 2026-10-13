@@ -1,0 +1,20 @@
+import { Router } from "express";
+import { authenticateStandard } from "../../middleware/authenticate.js";
+import { createImageUploadMiddleware } from "../../middleware/media-upload.middleware.js";
+import { requirePermissionStandard } from "../../middleware/require-permission.js";
+import { logCaughtRouteError } from "../../middleware/smart-request-logger.js";
+import { asyncHandler } from "../../utils/async-handler.js";
+import { AppError } from "../../utils/app-error.js";
+import * as controller from "./vendor-management.controller.js";
+
+const router = Router(); const optionalLogo = createImageUploadMiddleware("vendorLogo", { required: false, maxFields: 20, maxFieldBytes: 16 * 1024 });
+const parseLogo = (request, response, next) => request.is("multipart/form-data") ? optionalLogo(request, response, next) : next();
+router.use(authenticateStandard);
+router.post("/onboarding", parseLogo, asyncHandler(controller.createOnboardingController));
+router.get("/onboarding", asyncHandler(controller.getOnboardingController));
+router.patch("/onboarding", parseLogo, asyncHandler(controller.updateOnboardingController));
+router.get("/staff", requirePermissionStandard("vendor.staff.view"), asyncHandler(controller.listStaffController));
+router.post("/staff", requirePermissionStandard("vendor.staff.create"), asyncHandler(controller.createStaffController));
+router.patch("/staff/:staffId", requirePermissionStandard("vendor.staff.manage_status"), asyncHandler(controller.updateStaffController));
+router.use((caught, request, response, next) => { if (response.headersSent) return next(caught); if (caught instanceof AppError && caught.statusCode < 500) return response.status(caught.statusCode).json({ success: false, data: null, message: caught.statusCode === 413 ? "The vendor logo image is too large." : "The vendor logo upload is invalid." }); logCaughtRouteError({ request, response, error: caught, component: "vendor-management" }); return response.status(500).json({ success: false, data: null, message: "An unexpected error occurred. Please try again later." }); });
+export default router;

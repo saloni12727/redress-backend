@@ -1,0 +1,38 @@
+Home placement demo photography
+
+Downloaded from Unsplash under the Unsplash License:
+https://unsplash.com/license
+
+banner-women.jpg
+  https://images.unsplash.com/photo-1483985988355-763728e1935b
+banner-men.jpg
+  https://images.unsplash.com/photo-1614188443400-0050360d6c23
+brand-modaviva.jpg
+  https://images.unsplash.com/photo-1616847220575-31b062a4cd05
+brand-velora.jpg
+  https://images.unsplash.com/photo-1726153049464-f423dd75cdf9
+brand-redress-essentials.jpg
+  https://images.unsplash.com/photo-1515886657613-9f3515b0c78f
+brand-urban-loom.jpg
+  https://images.unsplash.com/photo-1529139574466-a303027c1d8b
+brand-north-thread.jpg
+  https://images.unsplash.com/photo-1539109136881-3be0616acf4b
+brand-atelier-nova.jpg
+  https://images.unsplash.com/photo-1525507119028-ed4c629a60a3
+category-women.jpg
+  https://images.unsplash.com/photo-1571513800374-df1bbe650e56
+category-men.jpg
+  https://images.unsplash.com/photo-1617137968427-85924c800a22
+category-kids.jpg
+  https://images.unsplash.com/photo-1554889160-1f693e60f196
+lookbook-women.jpg
+  https://images.unsplash.com/photo-1483985988355-763728e1935b
+lookbook-men.jpg
+  https://images.unsplash.com/photo-1617137968427-85924c800a22
+offer-weekend.jpg
+  https://images.unsplash.com/photo-1512436991641-6745cdb1723f
+offer-daily.jpg
+  https://images.unsplash.com/photo-1490481651871-ab68de25d43d
+
+These are temporary editorial/demo images, not official brand logos or final
+licensed product photography.

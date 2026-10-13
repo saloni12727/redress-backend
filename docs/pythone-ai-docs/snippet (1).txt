@@ -1,0 +1,2 @@
+generate() → keys: front, back, front_uncertainty, front_depth,
+                  garment_warped, flow   ✓
